@@ -1,0 +1,14 @@
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\DragonBlazeAuto.exe.config
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\DragonBlazeAuto.exe
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\DragonBlazeAuto.pdb
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\obj\Debug\DragonBlazeAuto.MainForm.resources
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\obj\Debug\DragonBlazeAuto.Properties.Resources.resources
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\obj\Debug\DragonBlazeAuto.csproj.GenerateResource.Cache
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\obj\Debug\DragonBlazeAuto.exe
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\obj\Debug\DragonBlazeAuto.pdb
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\Lib\adb.exe
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\Lib\fastboot.exe
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\Lib\AdbWinApi.dll
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\Lib\AdbWinUsbApi.dll
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\bin\Debug\Lib\libwinpthread-1.dll
+C:\Users\HD\Documents\Visual Studio 2017\Projects\DragonBlazeAuto\DragonBlazeAuto\obj\Debug\DragonBlazeAuto.csprojResolveAssemblyReference.cache
