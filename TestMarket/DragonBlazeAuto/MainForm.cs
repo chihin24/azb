@@ -24,7 +24,7 @@ namespace DragonBlazeAuto
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           AdbInteract.GetListDevices();
+           AdbInteract.Tap(new Point());
 
         }
 

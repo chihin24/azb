@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DragonBlazeAuto.Enum;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -13,8 +14,7 @@ namespace DragonBlazeAuto.AndroidCommunity
     class ACControler
     {
         private string adbRootPath = Path.Combine(Environment.CurrentDirectory, "Lib\\adb.exe");
-        private string ErrorHeader = "[***]";
-
+        private const string SHELL_INPUT = " SHELL INPUT ";
         public string ADBPATH
         {
             get
@@ -40,11 +40,22 @@ namespace DragonBlazeAuto.AndroidCommunity
             return new List<string>();
         }
 
-        public void Tap(Point location) {
+        public Utility.TapStatus Tap(Point location)
+        {
+            if (location.IsEmpty) return Utility.TapStatus.LocationEmpty;
+            string strResult = GetEndStandardOutput(SHELL_INPUT + " TAP " + location.X + " " + location.Y);
 
+            return Utility.TapStatus.NotError;
 
         }
+        public Utility.TapStatus Tap(string strDeviceID, Point location)
+        {
 
+            //string strResult = GetEndStandardOutput();
+
+            return Utility.TapStatus.NotError;
+
+        }
         private string GetEndStandardOutput(string pstrCommand)
         {
             ProcessStartInfo processInfo = null;
@@ -67,7 +78,7 @@ namespace DragonBlazeAuto.AndroidCommunity
             }
             catch (Exception objEx)
             {
-                return ErrorHeader + Environment.NewLine + objEx.Message;
+                return Utility.ERROR_HEADER + Environment.NewLine + objEx.Message;
             }
             finally
             {
