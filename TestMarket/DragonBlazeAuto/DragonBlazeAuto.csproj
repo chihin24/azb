@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidCommunity\ACControler.cs" />
-    <Compile Include="Enum\UEnum.cs" />
+    <Compile Include="Enum\Utility.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
