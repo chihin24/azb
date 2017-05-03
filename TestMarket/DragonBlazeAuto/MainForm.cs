@@ -24,8 +24,8 @@ namespace DragonBlazeAuto
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           AdbInteract.Tap(new Point());
-
+            //AdbInteract.Tap(new Point());
+            AdbInteract.ResetServer();
         }
 
        

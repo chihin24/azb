@@ -32,7 +32,7 @@ namespace DragonBlazeAuto.AndroidCommunity
 
 
 
-        public List<string> GetListDevices()
+        public string[] GetListDevices()
         {
 
             string abc = GetEndStandardOutput("devices");
@@ -40,7 +40,7 @@ namespace DragonBlazeAuto.AndroidCommunity
             return new List<string>();
         }
 
-        public Utility.TapStatus Tap(Point location)
+        public string[] Tap(Point location)
         {
             if (location.IsEmpty) return Utility.TapStatus.LocationEmpty;
             string strResult = GetEndStandardOutput(SHELL_INPUT + " TAP " + location.X + " " + location.Y);
@@ -48,22 +48,44 @@ namespace DragonBlazeAuto.AndroidCommunity
             return Utility.TapStatus.NotError;
 
         }
-        public Utility.TapStatus Tap(string strDeviceID, Point location)
+        public string[] Tap(string strDeviceID, Point location)
         {
 
-            //string strResult = GetEndStandardOutput();
+            if (location.IsEmpty) return Utility.TapStatus.LocationEmpty;
+            string strResult = GetEndStandardOutput(strDeviceID + SHELL_INPUT + " TAP " + location.X + " " + location.Y);
 
             return Utility.TapStatus.NotError;
 
         }
-        private string GetEndStandardOutput(string pstrCommand)
+        
+        public string[] ResetServer()
+        {
+            List<string> output = new List<string>();
+            
+            output.Add(GetEndStandardOutput("kill-server"));
+            output.Add(GetEndStandardOutput("start-server"));
+            
+            return output.ToArray();
+        }
+
+        public string[] StopServer()
+        {
+            string output;
+
+            output = GetEndStandardOutput("kill-server");
+
+            return new string[] { output };
+        }
+
+
+        private string GetEndStandardOutput(string strCommand)
         {
             ProcessStartInfo processInfo = null;
             Process process = null;
             string output = string.Empty;
             try
             {
-                processInfo = new ProcessStartInfo(ADBPATH, pstrCommand);
+                processInfo = new ProcessStartInfo(ADBPATH, strCommand);
                 processInfo.CreateNoWindow = true;
                 processInfo.UseShellExecute = false;
                 // *** Redirect the output ***
@@ -75,6 +97,7 @@ namespace DragonBlazeAuto.AndroidCommunity
 
                 // *** Read the streams ***
                 output = process.StandardOutput.ReadToEnd();
+
             }
             catch (Exception objEx)
             {
@@ -86,8 +109,43 @@ namespace DragonBlazeAuto.AndroidCommunity
                     process.Close();
             }
             return output;
-        }
 
+        }
+        public Image Screenshot() {
+        }
+        public Image Screenshot(string DeviceIP)
+        {
+            ProcessStartInfo processInfo = null;
+            Process process = null;
+            string output = string.Empty;
+            try
+            {
+                processInfo = new ProcessStartInfo(ADBPATH, "adb connect " + DeviceIP);
+                processInfo.CreateNoWindow = true;
+                processInfo.UseShellExecute = false;
+                // *** Redirect the output ***
+                processInfo.RedirectStandardError = false;
+                processInfo.RedirectStandardOutput = true;
+
+                process = Process.Start(processInfo);
+                process.WaitForExit();
+
+                // *** Read the streams ***
+                output = process.StandardOutput.ReadToEnd();
+
+            }
+            catch (Exception objEx)
+            {
+                return null;
+            }
+            finally
+            {
+                if (process != null)
+                    process.Close();
+
+            }
+            return null;
+        }
 
     }
 }
